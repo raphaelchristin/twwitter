@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @twweet %>
+
+<div>
+  <%= link_to "Edit this twweet", edit_twweet_path(@twweet) %> |
+  <%= link_to "Back to twweets", twweets_path %>
+
+  <%= button_to "Destroy this twweet", @twweet, method: :delete %>
+</div>
