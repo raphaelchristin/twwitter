@@ -8,6 +8,7 @@ class TwweetsController < ApplicationController
 
   # GET /twweets/1 or /twweets/1.json
   def show
+    @twweet = Twweet.find(params[:id])
   end
 
   # GET /twweets/new
@@ -17,6 +18,7 @@ class TwweetsController < ApplicationController
 
   # GET /twweets/1/edit
   def edit
+    @twweet = Twweet.find(params[:id])
   end
 
   # POST /twweets or /twweets.json
@@ -49,6 +51,7 @@ class TwweetsController < ApplicationController
 
   # DELETE /twweets/1 or /twweets/1.json
   def destroy
+    @twweet = Twweet.find(params[:id])
     @twweet.destroy
 
     respond_to do |format|
