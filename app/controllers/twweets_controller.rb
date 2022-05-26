@@ -4,6 +4,7 @@ class TwweetsController < ApplicationController
   # GET /twweets or /twweets.json
   def index
     @twweets = Twweet.all
+    @twweet = Twweet.new
   end
 
   # GET /twweets/1 or /twweets/1.json
@@ -27,7 +28,7 @@ class TwweetsController < ApplicationController
 
     respond_to do |format|
       if @twweet.save
-        format.html { redirect_to twweet_url(@twweet), notice: "Twweet was successfully created." }
+        format.html { redirect_to root_path, notice: "Twweet was successfully created." }
         format.json { render :show, status: :created, location: @twweet }
       else
         format.html { render :new, status: :unprocessable_entity }
